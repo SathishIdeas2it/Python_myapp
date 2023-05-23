@@ -1,0 +1,36 @@
+<style>
+    label, input {
+        display: block;
+    }
+    span.helptext {
+        display: none;
+    }
+
+    input[type='text'],input[type='password'], input[type='email']{       
+        width:250px;
+        Height:28px
+    }
+
+    input[type='submit']
+    {
+        background-color: #008CBA;
+        Padding:5px
+    }
+
+
+</style>
+
+<!--users/templates/base.html-->
+
+<h1> {% block title %} Welcome to my Website {% endblock %} </h1>
+
+{% if user.is_authenticated %}
+    <div style="display:flex;margin:5px;">
+        <div style="Padding:5px"><span style="font-weight:bold">logged as  {{ user.username|default:'Guest' }}</span></div>    
+        <div style="Padding:5px"> <a href="{% url 'logout' %}">Logout</a> </div>
+    </div>
+{% endif %}
+
+{% block content %}
+
+{% endblock %}

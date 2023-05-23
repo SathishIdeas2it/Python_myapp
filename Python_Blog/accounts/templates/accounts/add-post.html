@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Add Post</h2>
+
+<form method="post" action='.' enctype="multipart/form-data">
+    {% csrf_token %}
+
+{% if Message %}
+    <div style="Padding:5px;color:red"><span>{{ Message }} </span> </div>
+{% endif %}  
+
+
+<div class="container">
+    <form method="POST" action="{% url 'add_post' %}"> {% csrf_token %}
+    <div style="margin:5px;Padding:5px">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Title</i></label>
+            <input type="text" style="width:250px;height:30px" class="form-control mt-2" name="title" placeholder="Enter name of the Book" required>
+        </div>
+    </div>
+ 
+    <div style="margin:5px;Padding:5px">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Description</i></label>
+            <input type="text" style="width:250px;height:30px" class="form-control mt-2" name="description" placeholder="Enter description" required>
+        </div>
+    </div>
+
+    <div style="margin:5px;Padding:5px" class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Details</i></label>
+            <input type="text" style="width:500px;height:30px" class="form-control mt-2" name="details" placeholder="Enter Details" required>
+        </div>
+    </div>
+ 
+    <div style="margin:5px;Padding:5px" class="row mt-4">
+        <div class="form-group col-md-12">
+            <label><i style="font-weight: bold;">Image</i></label>
+            <input type="file" name="image">
+        </div>
+    </div>
+    <div style="margin:5px;Padding:5px">
+        <button type="submit" class="btn btn-outline-primary mt-4">Add Book</button>
+    </div>
+</div>
+</form>
+
+{% endblock %}

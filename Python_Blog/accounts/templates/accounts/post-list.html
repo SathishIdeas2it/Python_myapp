@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+
+{% block title %} {% endblock %}
+
+{% block content %} 
+
+<form> 
+    <div style="Padding:5px;text-align:center"><h2>Post List</h2></div> 
+    {% csrf_token %}
+    <div style="Padding:5px">
+    {% for post in posts %}
+    
+    <div style="display:flex;Padding:5px;margin:10px;border:2px solid">        
+            
+        <div style="Padding:5px;text-align:center">
+            <img style="Padding:5px;width:300px" src = "data:image/jpeg;base64,{{ post.image1 | urlencode }}" />
+        </div> 
+        <div style="Padding:5px">
+            <div style="Padding:5px">
+                    <div><span style="font-weight:bold">Title</span></div>
+                    <div><span>{{ post.title }}</span></div>
+                </div>
+                
+                <div style="Padding:5px">
+                    <div><span style="font-weight:bold">Description</span></div>
+                    <div><span>{{ post.description }}</span></div>
+                </div>
+                <div style="Padding:5px">
+                    <div><span style="font-weight:bold">Details</span></div>
+                    <div><span>{{post.details}}</span></div>
+                </div>
+                <div style="Padding:5px">
+                    <div><a href = "/accounts/post-details" >View details</a></div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</form>
+{% endblock %}

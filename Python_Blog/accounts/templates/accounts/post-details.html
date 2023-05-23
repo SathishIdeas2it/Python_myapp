@@ -1,0 +1,27 @@
+{% load 'base.html'%}
+
+{% block title %} <h2>Post List</h2> {% endblock %}
+
+{% block contect %} 
+
+<form method="post" action="{% url 'posts/post-detail.html' %}">
+    {% csrf_token %}
+    <div>
+        <div>
+            <p>title</p>
+           {{ form.title }}
+        </div>
+        <div>
+            <p>Description</p>
+           {{form.description}}
+        </div>
+        <div>
+            <p>Details</p>
+           {{form.details}}
+        </div>
+        <div>
+            <button type="submit">Back to Blog</button>
+        </div>
+    </div>
+</form>
+{%endblock%}
