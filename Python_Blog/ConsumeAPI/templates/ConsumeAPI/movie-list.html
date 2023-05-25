@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block  content %}
+
+<ul>
+    {% for item in data %}
+
+    <div style="margin:5px;display:flex;border:2px solid">
+        <div style="padding:10px">
+            <img src=" {{ item.image }}" style="width:250px" />
+        </div>
+        <div style="padding:5px">
+            <div style="padding:10px"><span><span style="font-weight:bold">Title: </span>{{item.title}}</span></div>
+            <div style="padding:10px"><span><span style="font-weight:bold">Year Released: </span>{{item.year}}</span></div>
+            <div style="padding:10px"><span><span style="font-weight:bold">Fron: </span>{{item.website}}</span></div>
+            <div style="padding:10px"><span><a href="{{item.url}}">Click here for more details</a></span></div>
+        </div>
+    </div>
+
+    {% endfor %}
+</ul>
+{% endblock content %}
