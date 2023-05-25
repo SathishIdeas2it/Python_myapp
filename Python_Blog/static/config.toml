@@ -11,3 +11,9 @@ nowrunning_url = "https://www.nowrunning.com"
 [Header]
 user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'
 accept_language = 'en-US, en;q=0.5'
+
+[Audio_Convertion_API]
+audio_to_text_API_Key = "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"
+model_type = "whisper-1"
+output_format = "text"
+output_langanguage = "en"
